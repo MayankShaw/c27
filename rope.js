@@ -28,8 +28,6 @@ class rope{
 
 		line(Anchor1X,Anchor1Y,Anchor2X,Anchor2Y);
 
-		
-
 
 	}
 

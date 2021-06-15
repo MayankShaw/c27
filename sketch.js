@@ -2,7 +2,7 @@
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
-const Body = Matter.Body;
+//const Body = Matter.Body;
 const Render = Matter.Render;
 const Constraint = Matter.Constraint;
 var bobObject1,bobObject2,bobObject3, bobObject4,bobObject5, roofObject
@@ -19,11 +19,13 @@ function setup() {
 	world = engine.world;
 
 	roofObject=new roof(400,250,230,20);
-	bob1 = new bob(290,575,40)
+	bob1 = new bob(280,575,40)
 	bob2 = new bob(360,575,40)
 	bob3 = new bob(400,575,40)
 	bob4 = new bob(440,575,40)
 	bob5 = new bob(500,575,40)
+
+	
 
 
 	rope1=new rope(bob1.body,roofObject.body,-80, 0)
@@ -33,7 +35,7 @@ function setup() {
 	rope5=new rope(bob5.body,roofObject.body,+100, 0)
 	Engine.run(engine);
 	
-  
+ 
 }
 
 
@@ -62,16 +64,19 @@ function draw() {
 
 
   
-  function keyPressed(){
-	if(keycode === UP_ARROW){
-Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-50,y:-45});
-	}
-}
+
 
 
  
 }
 
+
+
+function keyPressed(){
+	if(keyCode === UP_ARROW){
+Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-50,y:-45});
+	}
+}
 
 
 
